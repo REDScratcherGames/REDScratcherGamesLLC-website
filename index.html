@@ -4,28 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REDScratcherGamesLLC</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .game {
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .game img {
-            max-width: 100%;
-        }
-        .game-title {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-    <h1>REDScratcher Games</h1>
-    <div id="games-list"></div>
+    <div class="container">
+        <h1>REDScratcher Games</h1>
+        <div id="games-list"></div>
+    </div>
 
     <!-- Include the fetchGames.js script -->
     <script src="fetchGames.js"></script>
