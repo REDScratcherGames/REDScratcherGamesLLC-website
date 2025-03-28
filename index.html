@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REDScratcherGames LLC</title>
+    <title>REDScratcherGamesLLC</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,46 +27,7 @@
     <h1>REDScratcher Games</h1>
     <div id="games-list"></div>
 
-    <script>
-        async function fetchGames() {
-            try {
-                const response = await fetch('https://api.gamejolt.com/api/game/v1/games?username=REDScratcher');
-                const data = await response.json();
-
-                if (data.success === "true") {
-                    displayGames(data.response.games);
-                } else {
-                    document.getElementById('games-list').innerText = 'Failed to fetch games.';
-                }
-            } catch (error) {
-                console.error('Error fetching games:', error);
-                document.getElementById('games-list').innerText = 'Error fetching games.';
-            }
-        }
-
-        function displayGames(games) {
-            const gamesList = document.getElementById('games-list');
-            gamesList.innerHTML = '';
-
-            games.forEach(game => {
-                const gameDiv = document.createElement('div');
-                gameDiv.classList.add('game');
-
-                const gameTitle = document.createElement('div');
-                gameTitle.classList.add('game-title');
-                gameTitle.innerText = game.title;
-                gameDiv.appendChild(gameTitle);
-
-                const gameThumbnail = document.createElement('img');
-                gameThumbnail.src = game.thumbnail_url;
-                gameDiv.appendChild(gameThumbnail);
-
-                gamesList.appendChild(gameDiv);
-            });
-        }
-
-        // Fetch games when the page loads
-        fetchGames();
-    </script>
+    <!-- Include the fetchGames.js script -->
+    <script src="fetchGames.js"></script>
 </body>
 </html>
